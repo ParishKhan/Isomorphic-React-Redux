@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class componentName extends Component {
+class Layout extends Component {
   render() {
     return (
         <html>
@@ -11,7 +11,7 @@ class componentName extends Component {
                 <link rel='stylesheet' href='/style.css' />
             </head>
             <body>
-                <div id="app">Renderd From Server</div>
+                <div id="app">{this.props.children}</div>
                 <script src='static/client.js' />
             </body>
         </html>
@@ -19,4 +19,4 @@ class componentName extends Component {
   }
 }
 
-export default componentName;
+export default Layout;

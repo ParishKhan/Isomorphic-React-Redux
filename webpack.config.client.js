@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/Layout.jsx',
+  entry: './client/index.jsx',
   output: {
     path: __dirname,
     filename: './dist/client.js'

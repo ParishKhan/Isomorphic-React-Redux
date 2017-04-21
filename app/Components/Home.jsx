@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
+import Header from './Header.jsx';
 
 export class Home extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>Home</h1>
         <form onSubmit={this._handleSubmit.bind(this)}>
           <input type="text" ref="comment" onChange={this._handleChange.bind(this)} />

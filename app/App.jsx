@@ -1,18 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
+import Layout from './Layout.jsx';
+import Header from './Components/Header.jsx';
+import About from './Components/About.jsx';
+import Contact from './Components/Contact.jsx';
 
-import Routes from '../router/routes.jsx';
-
-const store = require('./store/configureStore').configure();
-
-
-const render = Component => {
-  ReactDOM.render(
-    <Component store={store} />,
-    document.getElementById('app')
-  )
-}
-
-render(Routes);
+module.exports = (
+  <Layout>
+        <Route path='/' component={Header} />
+        <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact} />
+  </Layout>
+)
