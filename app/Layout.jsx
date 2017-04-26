@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect, MapStateToProps } from 'react-redux';
 
 class Layout extends Component {
   render() {
