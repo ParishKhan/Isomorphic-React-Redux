@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect, MapStateToProps } from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class Layout extends Component {
   render() {
@@ -9,7 +10,6 @@ class Layout extends Component {
                 <title>This is title</title>
                 <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css" />
-                <link rel='stylesheet' href='/style.css' />
             </head>
             <body>
                 <div id="app">{this.props.children}</div>
@@ -20,4 +20,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default withRouter(connect()(Layout));
