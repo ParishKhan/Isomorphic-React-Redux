@@ -18190,6 +18190,7 @@ var Layout = function (_Component) {
     _createClass(Layout, [{
         key: 'render',
         value: function render() {
+            var custom = this.props.custom;
             return _react2.default.createElement(
                 'html',
                 null,
@@ -18212,6 +18213,9 @@ var Layout = function (_Component) {
                         { id: 'app' },
                         this.props.children
                     ),
+                    _react2.default.createElement('script', { dangerouslySetInnerHTML: {
+                            __html: 'window.PROPS=' + JSON.stringify(custom)
+                        } }),
                     _react2.default.createElement('script', { src: 'static/client.js' })
                 )
             );
@@ -18221,7 +18225,9 @@ var Layout = function (_Component) {
     return Layout;
 }(_react.Component);
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Layout));
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(function (state) {
+    return { custom: state };
+})(Layout));
 
 /***/ }),
 /* 156 */
@@ -18301,7 +18307,7 @@ var app = (0, _express2.default)();
 app.use('/static', _express2.default.static('./dist'));
 
 app.get('*', function (req, res) {
-    var store = (0, _configureStore.configure)({ commentText: "Tanim Shar" });
+    var store = (0, _configureStore.configure)({ commentText: "Parish Khan (This message is rendered from server)" });
 
     res.status(200).send((0, _render2.default)(_react2.default.createElement(
         _reactRedux.Provider,

@@ -12425,6 +12425,7 @@ var Layout = function (_Component) {
     _createClass(Layout, [{
         key: 'render',
         value: function render() {
+            var custom = this.props.custom;
             return _react2.default.createElement(
                 'html',
                 null,
@@ -12447,6 +12448,9 @@ var Layout = function (_Component) {
                         { id: 'app' },
                         this.props.children
                     ),
+                    _react2.default.createElement('script', { dangerouslySetInnerHTML: {
+                            __html: 'window.PROPS=' + JSON.stringify(custom)
+                        } }),
                     _react2.default.createElement('script', { src: 'static/client.js' })
                 )
             );
@@ -12456,7 +12460,9 @@ var Layout = function (_Component) {
     return Layout;
 }(_react.Component);
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Layout));
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(function (state) {
+    return { custom: state };
+})(Layout));
 
 /***/ }),
 /* 117 */
@@ -12525,7 +12531,7 @@ var _configureStore = __webpack_require__(110);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _configureStore.configure)();
+var store = (0, _configureStore.configure)(window.PROPS);
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,

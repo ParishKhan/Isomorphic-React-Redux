@@ -14,7 +14,7 @@ const app = express();
 app.use('/static', express.static('./dist'));
 
 app.get('*', (req, res) => {
-    const store = configure();
+    const store = configure({commentText: "Parish Khan (This message is rendered from server)"});
 
     res.status(200).send(render(
         <Provider store={store} >

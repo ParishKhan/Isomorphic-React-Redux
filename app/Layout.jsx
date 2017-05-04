@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 class Layout extends Component {
   render() {
+    var custom = this.props.custom;
     return (
         <html>
             <head>
@@ -13,6 +14,9 @@ class Layout extends Component {
             </head>
             <body>
                 <div id="app">{this.props.children}</div>
+                <script dangerouslySetInnerHTML={{
+                    __html: 'window.PROPS=' + JSON.stringify(custom)
+                }} />
                 <script src='static/client.js' />
             </body>
         </html>
@@ -20,4 +24,8 @@ class Layout extends Component {
   }
 }
 
-export default withRouter(connect()(Layout));
+export default withRouter(connect(
+    function(state) {
+        return { custom: state };
+    }
+)(Layout));
