@@ -4,10 +4,10 @@ import { connect, MapStateToProps } from 'react-redux';
 class About extends Component {
   render() {
     return (
-      <div>
+      <article>
         <h1>About</h1>
-        <p>This App is made by: {this.props.commentText}</p>
-      </div>
+        <p>I Bear Witness That There Is No God But Allah And Muhammad (sm) Is The Messenger Of Allah: "{this.props.commentText}"</p>
+      </article>
     );
   }
 }

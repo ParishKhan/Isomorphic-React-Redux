@@ -17899,7 +17899,7 @@ var About = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        'article',
         null,
         _react2.default.createElement(
           'h1',
@@ -17909,8 +17909,9 @@ var About = function (_Component) {
         _react2.default.createElement(
           'p',
           null,
-          'This App is made by: ',
-          this.props.commentText
+          'I Bear Witness That There Is No God But Allah And Muhammad (sm) Is The Messenger Of Allah: "',
+          this.props.commentText,
+          '"'
         )
       );
     }
@@ -17961,7 +17962,7 @@ var Contact = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        'article',
         null,
         _react2.default.createElement(
           'h1',
@@ -18118,12 +18119,17 @@ var Home = exports.Home = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        'article',
         null,
         _react2.default.createElement(
           'h1',
           null,
           'Home'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Write Down Your Name And Hit Submit To Show It On About Page'
         ),
         _react2.default.createElement(
           'form',
@@ -18209,9 +18215,13 @@ var Layout = function (_Component) {
                     'body',
                     null,
                     _react2.default.createElement(
-                        'div',
-                        { id: 'app' },
-                        this.props.children
+                        'main',
+                        null,
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'app' },
+                            this.props.children
+                        )
                     ),
                     _react2.default.createElement('script', { dangerouslySetInnerHTML: {
                             __html: 'window.PROPS=' + JSON.stringify(custom)
@@ -18307,7 +18317,7 @@ var app = (0, _express2.default)();
 app.use('/static', _express2.default.static('./dist'));
 
 app.get('*', function (req, res) {
-    var store = (0, _configureStore.configure)({ commentText: "Parish Khan (This message is rendered from server)" });
+    var store = (0, _configureStore.configure)({ commentText: "Your Name" });
 
     res.status(200).send((0, _render2.default)(_react2.default.createElement(
         _reactRedux.Provider,

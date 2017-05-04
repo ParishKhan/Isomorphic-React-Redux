@@ -23,14 +23,15 @@ export class Home extends Component {
   }
   render() {
     return (
-      <div>
+      <article>
         <h1>Home</h1>
+        <p>Write Down Your Name And Hit Submit To Show It On About Page</p>
         <form onSubmit={this._handleSubmit.bind(this)}>
           <input type="text" ref="comment" onChange={this._handleChange.bind(this)} />
           <button>Submit</button>
         </form>
         <p ref="display">{this.state.displayMessage}</p>
-      </div>
+      </article>
     );
   }
 }

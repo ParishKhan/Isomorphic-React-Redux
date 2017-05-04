@@ -13,7 +13,9 @@ class Layout extends Component {
                 <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css" />
             </head>
             <body>
-                <div id="app">{this.props.children}</div>
+                <main>
+                    <div id="app">{this.props.children}</div>
+                </main>
                 <script dangerouslySetInnerHTML={{
                     __html: 'window.PROPS=' + JSON.stringify(custom)
                 }} />
