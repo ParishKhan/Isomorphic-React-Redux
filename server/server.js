@@ -3,9 +3,9 @@ import express from 'express';
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import App from '../app/App.jsx';
+import App from 'App';
 import render from './render';
-import { configure } from '../app/store/configureStore';
+import { configure } from 'store/configureStore';
 
 //import sourceMapSupport from 'source-map-support';
 //sourceMapSupport.install();

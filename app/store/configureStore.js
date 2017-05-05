@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import { commentReducer } from '../reducers/reducers.js';
+import { commentReducer } from 'reducers/reducers';
 import { composeWithDevTools } from "redux-devtools-extension";
 
 export const configure = (initialState = {}) => {

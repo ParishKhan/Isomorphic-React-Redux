@@ -17489,23 +17489,23 @@ var _reactRouterDom = __webpack_require__(36);
 
 var _reactRedux = __webpack_require__(25);
 
-var _Layout = __webpack_require__(155);
+var _Layout = __webpack_require__(151);
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
-var _Home = __webpack_require__(154);
+var _Home = __webpack_require__(156);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Header = __webpack_require__(153);
+var _Header = __webpack_require__(155);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _About = __webpack_require__(151);
+var _About = __webpack_require__(153);
 
 var _About2 = _interopRequireDefault(_About);
 
-var _Contact = __webpack_require__(152);
+var _Contact = __webpack_require__(154);
 
 var _Contact2 = _interopRequireDefault(_Contact);
 
@@ -17867,6 +17867,107 @@ function validMime(type) {
 
 
 Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(25);
+
+var _reactRouterDom = __webpack_require__(36);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Layout = function (_Component) {
+    _inherits(Layout, _Component);
+
+    function Layout() {
+        _classCallCheck(this, Layout);
+
+        return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+    }
+
+    _createClass(Layout, [{
+        key: 'render',
+        value: function render() {
+            var custom = this.props.custom;
+            return _react2.default.createElement(
+                'html',
+                null,
+                _react2.default.createElement(
+                    'head',
+                    null,
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        'This is title'
+                    ),
+                    _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&subset=cyrillic', rel: 'stylesheet' }),
+                    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://unpkg.com/awsm.css/dist/awsm.min.css' })
+                ),
+                _react2.default.createElement(
+                    'body',
+                    null,
+                    _react2.default.createElement(
+                        'main',
+                        null,
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'app' },
+                            this.props.children
+                        )
+                    ),
+                    _react2.default.createElement('script', { dangerouslySetInnerHTML: {
+                            __html: 'window.PROPS=' + JSON.stringify(custom)
+                        } }),
+                    _react2.default.createElement('script', { src: 'static/client.js' })
+                )
+            );
+        }
+    }]);
+
+    return Layout;
+}(_react.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(function (state) {
+    return { custom: state };
+})(Layout));
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var addComment = exports.addComment = function addComment(commentText) {
+  return {
+    type: "NEW_COMMENT",
+    commentText: commentText
+  };
+};
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -17925,7 +18026,7 @@ exports.default = (0, _reactRedux.connect)(function (state) {
 })(About);
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17984,7 +18085,7 @@ var Contact = function (_Component) {
 exports.default = Contact;
 
 /***/ }),
-/* 153 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18052,7 +18153,7 @@ var Header = function Header() {
 exports.default = Header;
 
 /***/ }),
-/* 154 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18071,7 +18172,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(25);
 
-var _actions = __webpack_require__(156);
+var _actions = __webpack_require__(152);
 
 var actions = _interopRequireWildcard(_actions);
 
@@ -18154,107 +18255,6 @@ var Home = exports.Home = function (_Component) {
 }(_react.Component);
 
 exports.default = (0, _reactRedux.connect)()(Home);
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(25);
-
-var _reactRouterDom = __webpack_require__(36);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Layout = function (_Component) {
-    _inherits(Layout, _Component);
-
-    function Layout() {
-        _classCallCheck(this, Layout);
-
-        return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
-    }
-
-    _createClass(Layout, [{
-        key: 'render',
-        value: function render() {
-            var custom = this.props.custom;
-            return _react2.default.createElement(
-                'html',
-                null,
-                _react2.default.createElement(
-                    'head',
-                    null,
-                    _react2.default.createElement(
-                        'title',
-                        null,
-                        'This is title'
-                    ),
-                    _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&subset=cyrillic', rel: 'stylesheet' }),
-                    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://unpkg.com/awsm.css/dist/awsm.min.css' })
-                ),
-                _react2.default.createElement(
-                    'body',
-                    null,
-                    _react2.default.createElement(
-                        'main',
-                        null,
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'app' },
-                            this.props.children
-                        )
-                    ),
-                    _react2.default.createElement('script', { dangerouslySetInnerHTML: {
-                            __html: 'window.PROPS=' + JSON.stringify(custom)
-                        } }),
-                    _react2.default.createElement('script', { src: 'static/client.js' })
-                )
-            );
-        }
-    }]);
-
-    return Layout;
-}(_react.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(function (state) {
-    return { custom: state };
-})(Layout));
-
-/***/ }),
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var addComment = exports.addComment = function addComment(commentText) {
-  return {
-    type: "NEW_COMMENT",
-    commentText: commentText
-  };
-};
 
 /***/ }),
 /* 157 */
