@@ -17913,7 +17913,8 @@ var Layout = function (_Component) {
                         'This is title'
                     ),
                     _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&subset=cyrillic', rel: 'stylesheet' }),
-                    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://unpkg.com/awsm.css/dist/awsm.min.css' })
+                    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://unpkg.com/awsm.css/dist/awsm.min.css' }),
+                    _react2.default.createElement('link', { rel: 'stylesheet', href: 'static/styles/main.css' })
                 ),
                 _react2.default.createElement(
                     'body',

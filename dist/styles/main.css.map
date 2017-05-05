@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./app/styles/E:/Personal/Isomorphic-React-Redux/app/styles/app.scss"],"names":[],"mappings":"AAAA;EACE,qCAAoC,EACrC","file":"dist/styles/main.css","sourcesContent":["html {\r\n  font-family: \"Helvetica\", sans-serif;\r\n}\n\n\n// WEBPACK FOOTER //\n// ./app/styles/E:/Personal/Isomorphic-React-Redux/app/styles/app.scss"],"sourceRoot":""}
