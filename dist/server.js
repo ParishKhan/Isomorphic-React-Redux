@@ -18311,6 +18311,8 @@ var _configureStore = __webpack_require__(147);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var PORT = process.env.PORT || 3000;
+
 //import sourceMapSupport from 'source-map-support';
 //sourceMapSupport.install();
 
@@ -18331,8 +18333,8 @@ app.get('*', function (req, res) {
     )));
 });
 
-app.listen(3000, function () {
-    return console.log('Demo app listening on port 3000');
+app.listen(PORT, function () {
+    return console.log('App Is Listening On Port ' + PORT);
 });
 
 /***/ }),

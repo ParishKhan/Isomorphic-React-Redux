@@ -7,6 +7,8 @@ import App from 'App';
 import render from './render';
 import { configure } from 'store/configureStore';
 
+const PORT = process.env.PORT || 3000;
+
 //import sourceMapSupport from 'source-map-support';
 //sourceMapSupport.install();
 
@@ -25,4 +27,4 @@ app.get('*', (req, res) => {
     ));
 });
 
-app.listen(3000, () => console.log('Demo app listening on port 3000'));
+app.listen(PORT, () => console.log(`App Is Listening On Port ${PORT}`));
