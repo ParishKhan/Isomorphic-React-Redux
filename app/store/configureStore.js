@@ -1,10 +1,11 @@
 import { createStore, combineReducers } from 'redux';
-import { commentReducer } from 'reducers/reducers';
+import { commentReducer, infoReducer } from 'reducers/reducers';
 import { composeWithDevTools } from "redux-devtools-extension";
 
 export const configure = (initialState = {}) => {
   var reducer = combineReducers({
-    commentText: commentReducer
+    commentText: commentReducer,
+    info: infoReducer
   });
 
   var store = createStore(reducer, initialState, composeWithDevTools())

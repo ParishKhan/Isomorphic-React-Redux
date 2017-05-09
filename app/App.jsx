@@ -7,6 +7,7 @@ import Home from 'components/Home';
 import Header from 'components/Header';
 import About from 'components/About';
 import Contact from 'components/Contact';
+import CSS from 'styles/app.scss';
 
 class App extends Component {
   render() {

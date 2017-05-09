@@ -11,7 +11,7 @@ class Layout extends Component {
                 <title>This is title</title>
                 <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css" />
-                <link rel="stylesheet" href="static/styles/main.css" />
+                <link rel="stylesheet" href="/static/styles/main.css" />
             </head>
             <body>
                 <main>
@@ -20,7 +20,7 @@ class Layout extends Component {
                 <script dangerouslySetInnerHTML={{
                     __html: 'window.PROPS=' + JSON.stringify(custom)
                 }} />
-                <script src='static/client.js' />
+                <script src='/static/client.js' />
             </body>
         </html>
     );

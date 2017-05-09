@@ -7,3 +7,7 @@ export const commentReducer = (state="", action) => {
       return state;
   }
 }
+
+export const infoReducer = (state={}, action) => {
+  return state;
+}
